@@ -1,11 +1,17 @@
 name: Docker
 
+# on:
+#   push:
+#     branches:
+#       - [main, switch-scheduler]
+#     tags:
+#       - v*
+
 on:
   push:
-    branches:
-      - main, switch-scheduler
-    tags:
-      - v*
+    branches: [main, switch-scheduler]
+  pull_request:
+    branches: [main, switch-scheduler]
 
 jobs:
   push_client_image_to_registry:
